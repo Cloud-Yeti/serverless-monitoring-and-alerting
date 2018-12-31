@@ -26,7 +26,7 @@
 ---
 
 ### Confirm SNS email
-![image]("https://user-images.githubusercontent.com/22568316/50568301-ce6d6800-0d1d-11e9-9dac-c88521e00fdd.png")
+![image](https://user-images.githubusercontent.com/22568316/50568301-ce6d6800-0d1d-11e9-9dac-c88521e00fdd.png)
  ---
 
 
