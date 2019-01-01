@@ -20,7 +20,24 @@
 
 
 
+----
+# Deploy this stack with a Cloudformation template we have created.
+- Fork/Clone this repo.
+- Package the code and package with this command. Make sure to replace the s3 bucket name with a bucket you own 
+  ```console
+  aws cloudformation package --template-file sendSMSwhenConsoleLogin.yaml --s3-bucket your-s3-bucket --output-template-file output.yaml
+  ```
+- Deploy the stack with this command. You need to supply the email of the receipient in this command.
+  ```console
+  aws cloudformation deploy --template-file output.yaml --stack-name console-login-sns-test1 --parameter-overrides         SNSEmailParameter=youremail@gmail.com --capabilities CAPABILITY_NAMED_IAM CAPABILITY_IAM
+  ```
 
+- Now check your email for SNS confirmation to confirm subscription.
+- Now log out and log back into the AWS Management Console. You should receive an email in a few minutes mentioning the user who logged in as well in the email.
+
+---
+## Manual Steps
+---
 ### Create an SNS Topic
 ![image](https://user-images.githubusercontent.com/22568316/45520223-630b8480-b786-11e8-816e-66442c2a4db9.png)
 ---
@@ -41,7 +58,3 @@ Notified- almost immediately
 ![image](https://user-images.githubusercontent.com/22568316/45521024-2e99c780-b78a-11e8-8393-2f5ad85ac9e2.png)
 ---
 
-
-TODO:
-Modify Lambda Function: cloudtrail-cloudwatchevents-s3-acl-change 
-  - add logic to parse and check for   : "Permission": "FULL_CONTROL"  . If yes then change the ACL to private.  ![image](https://user-images.githubusercontent.com/22568316/45531356-6ec66d80-b7bd-11e8-9452-6f950a7ca659.png)
