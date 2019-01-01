@@ -1,7 +1,7 @@
 # AWS Monitoring and Alerting Solution Service Example
 
 # Youtube link: 
-https://studio.youtube.com/channel/UCbbp2FFbVQkuFYTJCZ92JQg
+https://www.youtube.com/channel/UCbbp2FFbVQkuFYTJCZ92JQg
 
 ## Requirements
 - IAM Role with SNS and cloudwatch Access 
